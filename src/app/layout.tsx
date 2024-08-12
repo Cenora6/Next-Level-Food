@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
+import { MainHeader } from "@/components/main-header/MainHeader";
 
 export const metadata: Metadata = {
   title: "Pongo",
-  description: "A simple NextJS app",
+  description: "Delicious meals, shared by a food-loving community.",
   icons: [
     {
       rel: "icon",
-      url: "icon.png",
+      url: "/favicon.ico",
     },
   ],
 };
@@ -19,7 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <MainHeader />
+        {children}
+      </body>
     </html>
   );
 }
