@@ -9,6 +9,7 @@ const Home: React.FC = () => {
     <main className={styles.main}>
       <Header />
       <Link text={"Go to ABOUT page"} url={"/about"} />
+      <Link text={"Go to BLOG page"} url={"/blog"} />
       <p>Today is... {formatDate(currDate)}</p>
     </main>
   );

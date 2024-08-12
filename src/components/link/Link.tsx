@@ -9,7 +9,7 @@ export const Link: React.FC<LinkProps> = ({ url, text }) => {
   );
 };
 
-export interface LinkProps {
+interface LinkProps {
   url: string;
   text: string;
 }
