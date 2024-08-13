@@ -1,4 +1,4 @@
-import styles from "./MainHeaderBackground.module.css";
+import styles from "./main-header-background.module.css";
 
 export const MainHeaderBackground: React.FC = () => {
   return (

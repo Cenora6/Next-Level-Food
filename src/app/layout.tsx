@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
-import { MainHeader } from "@/components/main-header/MainHeader";
+import { MainHeader } from "@/components/main-header/main-header";
 
 export const metadata: Metadata = {
   title: "Pongo",
