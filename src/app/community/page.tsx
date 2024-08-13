@@ -15,7 +15,6 @@ const Community: React.FC = () => {
       </header>
       <main className={styles.main}>
         <h2>Community Perks</h2>
-
         <ul className={styles.perks}>
           <li>
             <Image src={mealIcon} alt="A delicious meal" />

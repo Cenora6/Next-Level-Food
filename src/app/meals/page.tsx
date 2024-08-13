@@ -1,8 +1,11 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import { MealsGrid } from "@/components/meals-grid/meals-grid";
+import { getMeals } from "@/lib/db";
 
-const Meals: React.FC = () => {
+async function Meals() {
+  const meals = await getMeals();
+
   return (
     <>
       <header className={styles.header}>
@@ -18,10 +21,10 @@ const Meals: React.FC = () => {
         </p>
       </header>
       <main className={styles.main}>
-        <MealsGrid meals={[]} />
+        <MealsGrid meals={meals} />
       </main>
     </>
   );
-};
+}
 
 export default Meals;

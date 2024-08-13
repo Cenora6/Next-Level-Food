@@ -1,10 +1,8 @@
-import { formatDate } from "@/utils/formatDate";
 import Link from "next/link";
 import styles from "./page.module.css";
-import { ImagesSlideshow } from "@/components/images-slideshow/ImagesSlideshow";
+import { ImagesSlideshow } from "@/components/images-slideshow/images-slideshow";
 
 const Home: React.FC = () => {
-  const currDate = new Date();
   return (
     <>
       <header className={styles.header}>
