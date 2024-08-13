@@ -3,6 +3,9 @@ import Image from "next/image";
 import styles from "./meal-item.module.css";
 import { Meal } from "@/models/Meal";
 
+interface MealItemProps
+  extends Pick<Meal, "summary" | "title" | "creator" | "slug" | "image"> {}
+
 export const MealItem: React.FC<MealItemProps> = ({
   title,
   slug,
@@ -30,6 +33,3 @@ export const MealItem: React.FC<MealItemProps> = ({
     </article>
   );
 };
-
-interface MealItemProps
-  extends Pick<Meal, "summary" | "title" | "creator" | "slug" | "image"> {}
