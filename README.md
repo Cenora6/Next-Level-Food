@@ -1,4 +1,20 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![](public/preview.png)
+
+# NEXTLEVEL FOOD
+
+## Description
+
+This is a [Next.js](https://nextjs.org/) project created during the course ["Next.js & React - The Complete Guide"](https://www.udemy.com/course/nextjs-react-the-complete-guide/) on Udemy. 
+
+## Technologies and additional dependencies:
+
+| Tool | Description |
+| :-------------:|--------------|
+| [Next.js](https://nextjs.org/) | React framework |
+| [React](https://reactjs.org/) | JavaScript library for building user interfaces |
+| [TypeScript](https://www.typescriptlang.org/) | JavaScript superset |
+| [AWS](https://aws.amazon.com/) | Cloud services platform |
+| [better-sqlite3](https://www.npmjs.com/package/better-sqlite3) | SQLite3 bindings for Node.js |
 
 ## Getting Started
 
