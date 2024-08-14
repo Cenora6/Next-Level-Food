@@ -1,8 +1,13 @@
+"use client";
+
+import { useFormState } from "react-dom";
 import styles from "./page.module.css";
 import { ImagePicker } from "@/components/image-picker/image-picker";
 import { onShareMeal } from "@/lib/actions";
+import { MealsForm } from "@/components/meals-form/meals-form";
 
 const MealsShare: React.FC = () => {
+  const [state, formAction] = useFormState(onShareMeal, { message: "" });
   return (
     <>
       <header className={styles.header}>
@@ -12,7 +17,7 @@ const MealsShare: React.FC = () => {
         <p>Or any other meal you feel needs sharing!</p>
       </header>
       <main className={styles.main}>
-        <form className={styles.form} action={onShareMeal}>
+        <form className={styles.form} action={formAction}>
           <div className={styles.row}>
             <p>
               <label htmlFor="name">Your name</label>
@@ -41,8 +46,9 @@ const MealsShare: React.FC = () => {
             ></textarea>
           </p>
           <ImagePicker label="Meal Image" name="image" />
+          {state.message && <p>{state.message}</p>}
           <p className={styles.actions}>
-            <button type="submit">Share Meal</button>
+            <MealsForm />
           </p>
         </form>
       </main>

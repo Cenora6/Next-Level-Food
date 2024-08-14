@@ -1,9 +1,12 @@
-import fs from "node:fs";
 import sql from "better-sqlite3";
 import { Meal, SavedMeal } from "@/models/Meal";
 import slugify from "slugify";
 import xss from "xss";
+import { S3 } from "@aws-sdk/client-s3";
 
+const s3 = new S3({
+  region: "eu-north-1",
+});
 const db = sql("meals.db");
 
 export async function getMeals(): Promise<Meal[]> {
@@ -22,15 +25,13 @@ export async function saveMeal(meal: SavedMeal) {
   const extension = meal.image.name.split(".").pop();
   const fileName = `${slug}.${extension}`;
 
-  const stream = fs.createWriteStream(`public/images/${fileName}`);
   const bufferedImage = await meal.image.arrayBuffer();
-  stream.write(Buffer.from(bufferedImage), (error) => {
-    if (error) {
-      throw new Error("Failed to save image.");
-    }
+  s3.putObject({
+    Bucket: "cenora-nextjs-demo-users-image",
+    Key: fileName,
+    Body: Buffer.from(bufferedImage),
+    ContentType: meal.image.type,
   });
-
-  const image = `/images/${fileName}`;
 
   db.prepare(
     `
@@ -42,7 +43,7 @@ export async function saveMeal(meal: SavedMeal) {
     instructions,
     creator: meal.creator,
     creator_email: meal.creator_email,
-    image,
+    image: fileName,
     slug,
   });
 }
