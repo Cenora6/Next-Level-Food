@@ -9,6 +9,19 @@ interface MealDetailsProps {
   };
 }
 
+export async function generateMetadata({ params }: MealDetailsProps) {
+  const meal = getMeal(params.slug);
+
+  if (!meal) {
+    notFound();
+  }
+
+  return {
+    title: meal.title,
+    description: meal.summary,
+  };
+}
+
 const MealDetails: React.FC<MealDetailsProps> = ({ params }) => {
   const meal = getMeal(params.slug);
 

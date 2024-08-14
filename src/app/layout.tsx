@@ -3,7 +3,7 @@ import "@/styles/globals.css";
 import { MainHeader } from "@/components/main-header/main-header";
 
 export const metadata: Metadata = {
-  title: "Pongo",
+  title: "All meals",
   description: "Delicious meals, shared by a food-loving community.",
   icons: [
     {
