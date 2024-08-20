@@ -36,17 +36,46 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## Folder structure
+
+Folder structure was prepared based on a [Next.js Boilerplate](https://github.com/ixartz/Next-js-Boilerplate).
+
+```bash
+Pongo/
+├── public/
+└── src/
+   ├── app/
+   │   ├── (home)
+   │   ├── community
+   │   └── ...
+   ├── assets/
+   ├── components/
+   │   ├── image-picker/
+   │   ├── nav-link/
+   │   └── ...
+   ├── hooks/
+   ├── lib/
+   ├── models/
+   ├── styles/
+   │   └── globals.css
+   ├── utils/
+   └── tests/
+```
+
+Where:
+* `public/`: Houses static assets like images, fonts, and icons that are publicly accessible.
+* `app/`: This directory maps directly to the routes of the application. Each file in this directory corresponds to a route in the application.
+* `components/`: Contains all the reusable React components used throughout the application.
+* `hooks/`: Custom React hooks that encapsulate reusable stateful logic.
+* `lib/`: Contains any third-party integrations, configuration, or library code specific to the project.
+* `models/`: Contains data models and schemas, typically for defining the structure of data objects and integrating with databases or APIs.
+* `styles/`: Contains global stylesheets and component-level CSS modules.
+* `utils/`: Utility functions and helpers that can be used across the application.
+* `tests/`: Directory for unit and integration tests, ensuring that the application functions correctly.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
